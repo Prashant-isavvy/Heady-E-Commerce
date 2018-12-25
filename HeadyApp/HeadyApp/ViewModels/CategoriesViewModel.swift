@@ -38,7 +38,9 @@ extension CategoriesViewModel
 {
     
     func getCategoriesDataFromServer(_ completion: @escaping CompletionHandler){
+        self.categoriesViewController?.showLoadingIndicator()
         Interface().getList { (success, response) in
+            self.categoriesViewController?.hideLoadingIndicator()
             if success
             {
                 DispatchQueue.main.async
