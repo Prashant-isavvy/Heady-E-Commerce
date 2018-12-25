@@ -16,8 +16,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Ranking" representedClassName="Ranking" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="view_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="productId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rankingType" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Tax" representedClassName="Tax" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,7 +37,7 @@
     <elements>
         <element name="Product" positionX="-54" positionY="9" width="128" height="135"/>
         <element name="ProductCategory" positionX="18" positionY="108" width="128" height="120"/>
-        <element name="Ranking" positionX="0" positionY="81" width="128" height="75"/>
+        <element name="Ranking" positionX="0" positionY="81" width="128" height="105"/>
         <element name="Tax" positionX="-18" positionY="54" width="128" height="105"/>
         <element name="Varient" positionX="-36" positionY="18" width="128" height="120"/>
     </elements>

@@ -29,12 +29,17 @@ class Interface: NSObject {
                 completion(false,"Not containing JSON")
                 return
             }
-            if let categories = json[Constants.ParamKey.kCategories] as? [[String:Any]] {
-               kCoreDateHandler.saveToCategoriesInCoreData(categories: categories)
-               completion(true,categories)
-            }
-            if let rankings = json[Constants.ParamKey.kRankings] as? [[String:Any]] {
-                completion(true,rankings)
+            DispatchQueue.main.sync
+                {
+                    
+                if let categories = json[Constants.ParamKey.kCategories] as? [[String:Any]] {
+                    var ranings:[[String:Any]] = []
+                    if let fRankings = json[Constants.ParamKey.kRankings] as? [[String:Any]] {
+                        ranings = fRankings
+                    }
+                    kCoreDateHandler.saveToCategoriesInCoreData(categories: categories,rankings: ranings)
+                    completion(true,categories)
+                }
             }
         }
         task.resume()

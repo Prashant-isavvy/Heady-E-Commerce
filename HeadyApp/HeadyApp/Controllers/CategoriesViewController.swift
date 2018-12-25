@@ -26,12 +26,16 @@ class CategoriesViewController: BaseViewController {
     
     override func setUpScreenLayout() {
         self.categoryViewModel.initViewModel(self)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Rankings", style: .plain, target:self , action: #selector(checkRankings))
     }
     
     deinit {
         self.categoryViewModel = nil
     }
-
+    @objc func checkRankings()
+    {
+        self.pushViewController(withStoryboard: .main, controllerName: .rankings, isAnimate: true)
+    }
 }
 extension CategoriesViewController:UITableViewDataSource,UITableViewDelegate
 {

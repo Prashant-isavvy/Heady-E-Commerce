@@ -17,6 +17,8 @@
 		1802E29A21D1FF53005CCD7E /* VariantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29921D1FF53005CCD7E /* VariantTableViewCell.swift */; };
 		1802E29C21D1FFFB005CCD7E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29B21D1FFFB005CCD7E /* Color.swift */; };
 		1802E29E21D27DE5005CCD7E /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29D21D27DE5005CCD7E /* RankingsViewController.swift */; };
+		1802E2A021D2815C005CCD7E /* RankingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29F21D2815C005CCD7E /* RankingViewModel.swift */; };
+		1802E2A221D28E8F005CCD7E /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E2A121D28E8F005CCD7E /* RankingTableViewCell.swift */; };
 		1805424821CF7962006A2E48 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805424721CF7962006A2E48 /* CategoriesViewController.swift */; };
 		1805424A21CF7A56006A2E48 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805424921CF7A56006A2E48 /* CategoryTableViewCell.swift */; };
 		1805424C21CF7F4F006A2E48 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805424B21CF7F4F006A2E48 /* Alert.swift */; };
@@ -63,6 +65,8 @@
 		1802E29921D1FF53005CCD7E /* VariantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantTableViewCell.swift; sourceTree = "<group>"; };
 		1802E29B21D1FFFB005CCD7E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1802E29D21D27DE5005CCD7E /* RankingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
+		1802E29F21D2815C005CCD7E /* RankingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewModel.swift; sourceTree = "<group>"; };
+		1802E2A121D28E8F005CCD7E /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		1805424721CF7962006A2E48 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		1805424921CF7A56006A2E48 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		1805424B21CF7F4F006A2E48 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				1805424921CF7A56006A2E48 /* CategoryTableViewCell.swift */,
 				18018BAC21D155FF009B421C /* ProductTableViewCell.swift */,
 				1802E29921D1FF53005CCD7E /* VariantTableViewCell.swift */,
+				1802E2A121D28E8F005CCD7E /* RankingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				18018BB421D1650D009B421C /* SubCategoriesViewModel.swift */,
 				18018BB021D15CC4009B421C /* ProductsViewModel.swift */,
 				18018BB821D177CF009B421C /* ProductViewModel.swift */,
+				1802E29F21D2815C005CCD7E /* RankingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				185C530C21CD189000D58A78 /* AppDelegate.swift in Sources */,
+				1802E2A021D2815C005CCD7E /* RankingViewModel.swift in Sources */,
 				1805424E21CF801B006A2E48 /* BaseViewController.swift in Sources */,
 				18018BB121D15CC4009B421C /* ProductsViewModel.swift in Sources */,
 				18018BB521D1650D009B421C /* SubCategoriesViewModel.swift in Sources */,
@@ -381,6 +388,7 @@
 				1802E29C21D1FFFB005CCD7E /* Color.swift in Sources */,
 				1802E29A21D1FF53005CCD7E /* VariantTableViewCell.swift in Sources */,
 				18018BAF21D15653009B421C /* ProductsViewController.swift in Sources */,
+				1802E2A221D28E8F005CCD7E /* RankingTableViewCell.swift in Sources */,
 				185C530E21CD19F100D58A78 /* CategoriesViewModel.swift in Sources */,
 				185C531121CD329900D58A78 /* Interface.swift in Sources */,
 				18018BAD21D155FF009B421C /* ProductTableViewCell.swift in Sources */,

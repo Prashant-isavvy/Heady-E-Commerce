@@ -8,7 +8,11 @@
 
 import Foundation
 import CoreData
-
+enum RankingType:String {
+    case mostViewed = "Most Viewed Products"
+    case mostOrdered = "Most OrdeRed Products"
+    case mostShared = "Most ShaRed Products"
+}
 struct CoreDataHandler {
     static let shared:CoreDataHandler = CoreDataHandler()
     func resetAllCategoriesRecords(in entity : String) // entity = Your_Entity_Name
@@ -68,7 +72,41 @@ struct CoreDataHandler {
         }
     }
     
-    func saveToCategoriesInCoreData(categories:[[String:Any]]){
+    func saveRankings( _ rankings:[[String:Any]]) {
+        for ranking in rankings
+        {
+            if let rankingType = ranking[Constants.ParamKey.kRanking] as? String
+            {
+                if let products = ranking[Constants.ParamKey.kProducts] as? [[String:Any]]{
+                    for product in products{
+                        let entity = NSEntityDescription.entity(forEntityName: Constants.CoreDataEntity.kRanking, in: mainContext)
+                        let newRank = NSManagedObject(entity: entity!, insertInto: mainContext)
+                        newRank.setValue(product[Constants.ParamKey.kId], forKey: Constants.ParamKey.kProductId)
+                        
+                        if rankingType == RankingType.mostViewed.rawValue
+                        {
+                           newRank.setValue(product[Constants.ParamKey.kViewCount], forKey: Constants.ParamKey.kCounts)
+                        }
+                        else if rankingType == RankingType.mostOrdered.rawValue{
+                             newRank.setValue(product[Constants.ParamKey.kOrderCount], forKey: Constants.ParamKey.kCounts)
+                        }
+                        else if rankingType == RankingType.mostShared.rawValue{
+                             newRank.setValue(product[Constants.ParamKey.kShareCount], forKey: Constants.ParamKey.kCounts)
+                        }
+                        newRank.setValue(rankingType, forKey: Constants.ParamKey.kRankingType)
+                      
+                        let productDetail = kCoreDateHandler.getProductDetail(product[Constants.ParamKey.kId] as? Int ?? 0)
+                        if let name = productDetail.value(forKey: Constants.ParamKey.kName) as? String{
+                             newRank.setValue(name, forKey: Constants.ParamKey.kProductName)
+                        }
+                       
+                    }
+                }
+            }
+        }
+    }
+    
+    func saveToCategoriesInCoreData(categories:[[String:Any]],rankings:[[String:Any]]){
         DispatchQueue.main.async {
             kCoreDateHandler.resetAllCategoriesRecords(in: Constants.CoreDataEntity.kCategories)
             for category in categories
@@ -107,6 +145,9 @@ struct CoreDataHandler {
                     
                 }
             }
+            
+            self.saveRankings(rankings)
+            
             do {
                 try mainContext.save()
             } catch {
@@ -224,6 +265,26 @@ struct CoreDataHandler {
     {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.CoreDataEntity.kVarient)
         let predicate = NSPredicate(format: "productId = %d", forProduct)
+        request.predicate = predicate
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try mainContext.fetch(request)
+            if let finalResult = result as? [NSManagedObject],finalResult.count>0{
+                return finalResult
+            }
+            else
+            {
+                return []
+            }
+        } catch {
+            return []
+        }
+    }
+    
+    func getRankings(_ forRankingType:RankingType) -> [NSManagedObject]
+    {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constants.CoreDataEntity.kRanking)
+        let predicate = NSPredicate(format: "rankingType = %@", forRankingType.rawValue)
         request.predicate = predicate
         request.returnsObjectsAsFaults = false
         do {

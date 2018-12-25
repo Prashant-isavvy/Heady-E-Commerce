@@ -22,6 +22,7 @@ enum ViewController: String {
     case subCategory = "SubCategoriesViewController"
     case products = "ProductsViewController"
     case productDetail = "ProductDetailsViewController"
+    case rankings = "RankingsViewController"
     
 }
 struct Constants
@@ -59,6 +60,14 @@ struct Constants
         static let kHasProducts = "hasProducts"
         static let kHasCategories = "hasCategories"
         
+        static let kRanking = "ranking"
+        static let kCounts = "count"
+        static let kViewCount = "view_count"
+        static let kOrderCount = "order_count"
+        static let kShareCount = "shares"
+        static let kRankingType = "rankingType"
+        static let kProductName = "productName"
+        
         
         
     }
@@ -66,10 +75,12 @@ struct Constants
         static let kCategories = "ProductCategory"
          static let kProduct = "Product"
         static let kVarient = "Varient"
+         static let kRanking = "Ranking"
     }
     struct tableViewCells {
         static let kCategoryCell = "CategoryTableViewCell"
         static let kProductCell = "ProductTableViewCell"
         static let kVariantCell = "VariantTableViewCell"
+        static let kRankCell = "RankingTableViewCell"
     }
 }
