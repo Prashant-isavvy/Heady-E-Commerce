@@ -14,6 +14,16 @@ let mainContext = kAppDelegate.persistentContainer.viewContext
 let kCoreDateHandler = CoreDataHandler.shared
 typealias CompletionHandler = (_ success: Bool, _ response: Any?) -> Void
 
+enum StoryBoard: String {
+    case main = "Main"
+}
+enum ViewController: String {
+    case categories = "CategoriesViewController"
+    case subCategory = "SubCategoriesViewController"
+    case products = "ProductsViewController"
+    case productDetail = "ProductDetailsViewController"
+    
+}
 struct Constants
 {
     // MARK: Enums
@@ -36,17 +46,30 @@ struct Constants
         static let kProducts = "products"
         static let kName = "name"
         static let kDateAdded = "date_added"
-        static let kTax = "tax"
+        
+        static let kProductId = "productId"
+        static let kVariants = "variants"
         static let kProductColor = "color"
         static let kProductSize = "size"
         static let kProductPrice = "price"
+        
+        static let kTax = "tax"
         static let kTaxValue = "value"
+        
+        static let kHasProducts = "hasProducts"
+        static let kHasCategories = "hasCategories"
+        
+        
         
     }
     struct CoreDataEntity {
         static let kCategories = "ProductCategory"
+         static let kProduct = "Product"
+        static let kVarient = "Varient"
     }
     struct tableViewCells {
         static let kCategoryCell = "CategoryTableViewCell"
+        static let kProductCell = "ProductTableViewCell"
+        static let kVariantCell = "ProductTableViewCell"
     }
 }

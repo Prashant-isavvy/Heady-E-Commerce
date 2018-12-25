@@ -26,7 +26,17 @@ class BaseViewController: UIViewController {
     func setUpScreenLayout(){
         
     }
-
+    
+    // MARK: - Navigation methods
+    func viewController(withStoryboard name:StoryBoard, controllerName: ViewController) -> UIViewController {
+        let storyboard = UIStoryboard.init(name: name.rawValue, bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: controllerName.rawValue)
+    }
+    func pushViewController(withStoryboard name:StoryBoard, controllerName: ViewController ,isAnimate:Bool) {
+        let storyboard = UIStoryboard.init(name: name.rawValue, bundle: nil)
+        let viewcontroller = storyboard.instantiateViewController(withIdentifier: controllerName.rawValue)
+        self.navigationController?.pushViewController(viewcontroller, animated: isAnimate)
+    }
     // MARK: - Loader methods
     func showLoadingIndicator(isOnCompleteScreen:Bool = true, color: UIColor = UIColor.blue, lodingText:String = "")
     {

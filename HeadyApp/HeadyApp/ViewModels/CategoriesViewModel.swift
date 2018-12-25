@@ -8,18 +8,16 @@
 
 import UIKit
 import CoreData
+
 class CategoriesViewModel: NSObject {
     var categories:[NSManagedObject]? = []
     var categoriesViewController:CategoriesViewController?
-    override init() {
-        super.init()
-    }
     deinit {
         self.categoriesViewController = nil
     }
-    func initChatViewModel(_ controller: CategoriesViewController){
+    func initViewModel(_ controller: CategoriesViewController){
         self.categoriesViewController = controller
-        self.categories = kCoreDateHandler.getFromDataBase(Constants.CoreDataEntity.kCategories)
+        self.categories = kCoreDateHandler.getMainCategories()
         if self.categories?.count == 0
         {
             self.getCategoriesDataFromServer { (success, response) in
@@ -27,6 +25,7 @@ class CategoriesViewModel: NSObject {
             }
         }
     }
+    
     func products(_ withCategorye:String) -> [NSManagedObject] {
         
         return []
@@ -45,7 +44,6 @@ extension CategoriesViewModel
                 DispatchQueue.main.async
                     {
                         self.categories = kCoreDateHandler.getMainCategories()
-                       // self.categories = kCoreDateHandler.getFromDataBase(Constants.CoreDataEntity.kCategories)
                         self.categoriesViewController?.tblCategories.reloadData()
                         completion(true,self.categories)
                     }

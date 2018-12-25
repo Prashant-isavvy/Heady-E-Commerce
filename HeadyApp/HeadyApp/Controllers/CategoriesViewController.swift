@@ -25,7 +25,7 @@ class CategoriesViewController: BaseViewController {
     }
     
     override func setUpScreenLayout() {
-        self.categoryViewModel.initChatViewModel(self)
+        self.categoryViewModel.initViewModel(self)
     }
     
     deinit {
@@ -45,5 +45,14 @@ extension CategoriesViewController:UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
        return categoryViewModel.categories?.count ?? 0
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categoryViewModel.categories?[indexPath.row]
+        if let hasCategories = category?.value(forKey: Constants.ParamKey.kHasCategories) as? Bool , hasCategories == true
+        {
+           let subCategoryVC = viewController(withStoryboard: .main, controllerName: .subCategory) as! SubCategoriesViewController
+             subCategoryVC.categoryId = category?.value(forKey: Constants.ParamKey.kId) as? Int
+            self.navigationController?.pushViewController(subCategoryVC, animated: true)
+        }
     }
 }
