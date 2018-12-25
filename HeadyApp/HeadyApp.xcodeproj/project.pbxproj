@@ -15,7 +15,8 @@
 		18018BB721D1769B009B421C /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18018BB621D1769B009B421C /* ProductDetailsViewController.swift */; };
 		18018BB921D177CF009B421C /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18018BB821D177CF009B421C /* ProductViewModel.swift */; };
 		1802E29A21D1FF53005CCD7E /* VariantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29921D1FF53005CCD7E /* VariantTableViewCell.swift */; };
-		1802E29C21D1FFFB005CCD7E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29B21D1FFFB005CCD7E /* File.swift */; };
+		1802E29C21D1FFFB005CCD7E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29B21D1FFFB005CCD7E /* Color.swift */; };
+		1802E29E21D27DE5005CCD7E /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802E29D21D27DE5005CCD7E /* RankingsViewController.swift */; };
 		1805424821CF7962006A2E48 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805424721CF7962006A2E48 /* CategoriesViewController.swift */; };
 		1805424A21CF7A56006A2E48 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805424921CF7A56006A2E48 /* CategoryTableViewCell.swift */; };
 		1805424C21CF7F4F006A2E48 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805424B21CF7F4F006A2E48 /* Alert.swift */; };
@@ -60,7 +61,8 @@
 		18018BB621D1769B009B421C /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		18018BB821D177CF009B421C /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		1802E29921D1FF53005CCD7E /* VariantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantTableViewCell.swift; sourceTree = "<group>"; };
-		1802E29B21D1FFFB005CCD7E /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		1802E29B21D1FFFB005CCD7E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1802E29D21D27DE5005CCD7E /* RankingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
 		1805424721CF7962006A2E48 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		1805424921CF7A56006A2E48 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		1805424B21CF7F4F006A2E48 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				18018BB221D1635C009B421C /* SubCategoriesViewController.swift */,
 				18018BAE21D15653009B421C /* ProductsViewController.swift */,
 				18018BB621D1769B009B421C /* ProductDetailsViewController.swift */,
+				1802E29D21D27DE5005CCD7E /* RankingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,7 +225,7 @@
 			children = (
 				1805424B21CF7F4F006A2E48 /* Alert.swift */,
 				1805424F21CF80A7006A2E48 /* Window.swift */,
-				1802E29B21D1FFFB005CCD7E /* File.swift */,
+				1802E29B21D1FFFB005CCD7E /* Color.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -374,7 +377,8 @@
 				18018BB121D15CC4009B421C /* ProductsViewModel.swift in Sources */,
 				18018BB521D1650D009B421C /* SubCategoriesViewModel.swift in Sources */,
 				1805425221CFD1CF006A2E48 /* CoreDataHandler.swift in Sources */,
-				1802E29C21D1FFFB005CCD7E /* File.swift in Sources */,
+				1802E29E21D27DE5005CCD7E /* RankingsViewController.swift in Sources */,
+				1802E29C21D1FFFB005CCD7E /* Color.swift in Sources */,
 				1802E29A21D1FF53005CCD7E /* VariantTableViewCell.swift in Sources */,
 				18018BAF21D15653009B421C /* ProductsViewController.swift in Sources */,
 				185C530E21CD19F100D58A78 /* CategoriesViewModel.swift in Sources */,

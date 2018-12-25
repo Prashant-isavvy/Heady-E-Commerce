@@ -24,7 +24,7 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func setUpScreenLayout(){
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.AppGreenButtonColor()
     }
     
     // MARK: - Navigation methods

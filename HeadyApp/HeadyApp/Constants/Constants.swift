@@ -70,6 +70,6 @@ struct Constants
     struct tableViewCells {
         static let kCategoryCell = "CategoryTableViewCell"
         static let kProductCell = "ProductTableViewCell"
-        static let kVariantCell = "ProductTableViewCell"
+        static let kVariantCell = "VariantTableViewCell"
     }
 }

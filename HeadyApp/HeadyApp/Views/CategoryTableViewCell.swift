@@ -10,10 +10,8 @@ import UIKit
 import CoreData
 class CategoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lblCategory: UILabel!
-    
-    @IBOutlet weak var lblAvailableSubCategories: UILabel!
-    @IBOutlet weak var lblNumberOfProducts: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +22,17 @@ class CategoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setCategoriesCell(category:NSManagedObject?) {
+    func setCategoriesCell(category:NSManagedObject?)
+    {
         self.lblCategory.text = category?.value(forKey:Constants.ParamKey.kName) as? String
+        
+        if let hasCategories = category?.value(forKey: Constants.ParamKey.kHasCategories) as? Bool , hasCategories == true
+        {
+          self.accessoryType = .disclosureIndicator
+        }
+        if let hasCategories = category?.value(forKey: Constants.ParamKey.kHasProducts) as? Bool , hasCategories == true {
+            self.accessoryType = .disclosureIndicator
+        }
+        self.imgIcon.image = UIImage(named: "\(category?.value(forKey:Constants.ParamKey.kId) ?? 0)")
     }
 }

@@ -33,7 +33,7 @@ extension ProductsViewController:UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tableViewCells.kProductCell, for: indexPath) as! ProductTableViewCell
-        cell.setProductCell(category: productViewModel.products?[indexPath.row])
+        cell.setProductCell(product: productViewModel.products?[indexPath.row])
         return cell
     }
     

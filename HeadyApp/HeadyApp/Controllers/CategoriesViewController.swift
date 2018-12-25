@@ -52,6 +52,7 @@ extension CategoriesViewController:UITableViewDataSource,UITableViewDelegate
         {
            let subCategoryVC = viewController(withStoryboard: .main, controllerName: .subCategory) as! SubCategoriesViewController
              subCategoryVC.categoryId = category?.value(forKey: Constants.ParamKey.kId) as? Int
+            subCategoryVC.title = category?.value(forKey: Constants.ParamKey.kName) as? String
             self.navigationController?.pushViewController(subCategoryVC, animated: true)
         }
     }

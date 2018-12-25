@@ -86,5 +86,31 @@ public extension UIColor
     }
     
     /// SwifterSwift: Short hexadecimal value string (read-only, if applicable).
-  
+    
+    // can add colors according to text (There should be hexacode or rgb for proper implemenatation)
+    class func colorWithName(_ name:String) -> UIColor{
+        switch name {
+        case "black":
+            return .black
+        case "lightgray":
+            return .lightGray
+        case "blue":
+            return .blue
+        case "red":
+            return .red
+        case "green":
+            return .green
+        case "yellow":
+            return .yellow
+        case "orange":
+            return .orange
+        case "purple":
+            return .purple
+        case "brown":
+            return .brown
+        default:
+            return .white
+        }
+    }
 }
+

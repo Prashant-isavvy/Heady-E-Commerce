@@ -11,7 +11,6 @@ import UIKit
 class ProductDetailsViewController: BaseViewController {
 
     @IBOutlet var productViewModel: ProductViewModel!
-    @IBOutlet weak var lblTaxType: UILabel!
     @IBOutlet weak var lblTaxValue: UILabel!
     @IBOutlet weak var tblVariants: UITableView!
     
@@ -31,8 +30,8 @@ class ProductDetailsViewController: BaseViewController {
     }
     func updateUI()
     {
-        self.lblTaxType.text = self.productViewModel.product?.value(forKey: Constants.ParamKey.kTax) as? String ?? ""
-        self.lblTaxValue.text =  "\(self.productViewModel.product?.value(forKey: Constants.ParamKey.kTaxValue) as? Double ?? 0.0)"
+        self.lblTaxValue.text =  "All variants of this product will be added \(self.productViewModel.product?.value(forKey: Constants.ParamKey.kTaxValue) as? Double ?? 0.0)% \(self.productViewModel.product?.value(forKey: Constants.ParamKey.kTax) as? String ?? "") extra."
+        
         self.tblVariants.reloadData()
     }
 }
@@ -41,13 +40,16 @@ extension ProductDetailsViewController:UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tableViewCells.kVariantCell, for: indexPath) as! VariantTableViewCell
-        cell.setProductCell(category: productViewModel.variants?[indexPath.row])
+        cell.setVariantCell(variant:  productViewModel.variants?[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return productViewModel.variants?.count ?? 0
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 

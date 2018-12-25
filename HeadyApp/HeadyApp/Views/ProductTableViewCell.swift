@@ -23,7 +23,8 @@ class ProductTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setProductCell(category:NSManagedObject?) {
-        self.lblProductName.text = category?.value(forKey:Constants.ParamKey.kName) as? String
+    func setProductCell(product:NSManagedObject?) {
+        self.lblProductName.text = product?.value(forKey:Constants.ParamKey.kName) as? String
+        self.accessoryType = .disclosureIndicator
     }
 }

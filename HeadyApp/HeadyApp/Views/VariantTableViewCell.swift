@@ -18,6 +18,9 @@ class VariantTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.viewColor.layer.backgroundColor = UIColor.lightGray.cgColor
+        self.viewColor.layer.borderWidth = 1.0
+        self.selectionStyle = .none
         // Initialization code
     }
 
@@ -26,9 +29,10 @@ class VariantTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setProductCell(category:NSManagedObject?) {
-        
-        self.lblSize.text = category?.value(forKey:Constants.ParamKey.kName) as? String
-        
+    func setVariantCell(variant:NSManagedObject?) {
+        self.lblSize.text = "\(variant?.value(forKey:Constants.ParamKey.kProductSize) as? Int ?? 0)"
+        self.lblColor.text = variant?.value(forKey:Constants.ParamKey.kProductColor) as? String
+        self.lblPrice.text = "\(variant?.value(forKey:Constants.ParamKey.kProductPrice) as? Double ?? 0.0)"
+        self.viewColor.backgroundColor = UIColor.colorWithName((lblColor.text ?? "").lowercased())
     }
 }
